@@ -1,6 +1,6 @@
 # Sharetape-Speech-To-Text
 
-Run speech to text for video for free.
+Run speech to text for video for free. This outputs 3 files, 1 `words.json` file that has all of the words said along with their timing and confidence, 1 `transcript.txt` with just all the words read, and 1 `captions.srt` file which is the captions for that video.
 
 ## Install requirements
 ```
