@@ -14,9 +14,7 @@ def main():
     args = parser.parse_args()
     video_id = str(uuid.uuid4())
 
-    model = Model(
-        model_path="/Users/parasadhikary/Downloads/scratch_s2t/vosk-model-en-us-0.42-gigaspeech"
-    )
+    model = Model(model_path="vosk-model-en-us-0.42-gigaspeech")
     SetLogLevel(0)
     logging.info("sp2t setup")
 
