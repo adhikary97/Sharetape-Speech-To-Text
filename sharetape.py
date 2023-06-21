@@ -42,9 +42,10 @@ class Sharetape:
 
     def extract_transcript(self):
         # extract audio from video. keep commented to use existing audio file
-        my_clip = mp.VideoFileClip(self.video)
-        if my_clip.audio:
-            my_clip.audio.write_audiofile(self.audio, verbose=False, logger=None)
+        if self.video != "":
+            my_clip = mp.VideoFileClip(self.video)
+            if my_clip.audio:
+                my_clip.audio.write_audiofile(self.audio, verbose=False, logger=None)
 
         # transcribe audio file
         transcript, words, subtitle = self.handle_speech_2_text()

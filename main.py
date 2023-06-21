@@ -10,19 +10,31 @@ from sharetape import Sharetape
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-v", "--video", type=str, required=True)
+    parser.add_argument("-v", "--video", type=str, required=False, default="")
+    parser.add_argument("-a", "--audio", type=str, required=False, default="")
     args = parser.parse_args()
+
+    if not (args.video or args.audio):
+        parser.error("No action requested, add --video or --audio")
+
     video_id = str(uuid.uuid4())
 
+    SetLogLevel(-1)
+
     model = Model(model_path="vosk-model-en-us-0.42-gigaspeech")
-    SetLogLevel(0)
+
     logging.info("sp2t setup")
 
     os.makedirs(f"{video_id}")
 
+    if args.audio != "":
+        audio = args.audio
+    else:
+        audio = f"{video_id}/audio.wav"
+
     shartape = Sharetape(
         args.video,
-        f"{video_id}/audio.wav",
+        audio,
         f"{video_id}/mono_audio.wav",
         f"{video_id}/transcript.txt",
         f"{video_id}/words.json",
