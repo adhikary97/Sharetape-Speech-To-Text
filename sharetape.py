@@ -47,13 +47,16 @@ class Sharetape:
             my_clip.audio.write_audiofile(self.audio, verbose=False, logger=None)
 
         # transcribe audio file
-        transcript, words, _ = self.handle_speech_2_text()
+        transcript, words, subtitle = self.handle_speech_2_text()
 
         with open(self.transcript, "w+") as fil:
             fil.write(transcript)
 
         # save words to file
         self.save_data(words)
+
+        with open(self.subtitles, "w+", encoding="utf8") as f:
+            f.writelines(subtitle)
 
     def handle_speech_2_text(self):
         sample_rate, stereo_data = wav.read(self.audio)

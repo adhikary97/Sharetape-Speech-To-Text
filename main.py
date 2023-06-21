@@ -26,7 +26,7 @@ def main():
         f"{video_id}/mono_audio.wav",
         f"{video_id}/transcript.txt",
         f"{video_id}/words.json",
-        f"{video_id}/subtitles.srt",
+        f"{video_id}/captions.srt",
         model,
     )
     shartape.extract_transcript()
