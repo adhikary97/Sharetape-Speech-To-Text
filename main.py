@@ -16,6 +16,8 @@ def main():
 
     if not (args.video or args.audio):
         parser.error("No action requested, add --video or --audio")
+    elif args.video and args.audio:
+        parser.error("Only select one action --video or --audio")
 
     video_id = str(uuid.uuid4())
 

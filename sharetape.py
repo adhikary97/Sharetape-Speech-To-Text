@@ -121,7 +121,7 @@ class Sharetape:
                 total.append(s.content)
                 subs.append(s)
 
-        transcript = ". ".join(total)
+        transcript = " ".join(total)
         subtitle = srt.compose(subs)
 
         return (transcript, total_words, subtitle)
