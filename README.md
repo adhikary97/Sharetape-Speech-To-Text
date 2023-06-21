@@ -24,9 +24,9 @@ Video must be `.mp4` or `.mov`
 $ python main.py --video videoname.mp4
 ```
 
-## Speech to text with
+## Speech to text with audio
 
-Video must be `.mp3` or `.wav`
+Video must be `.wav`
 
 ```
 $ python main.py --audio audioname.wav
