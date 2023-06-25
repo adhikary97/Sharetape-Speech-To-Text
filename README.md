@@ -10,7 +10,7 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-## Install Vosk Library
+## Download Vosk Library
 
 This is the language library this speech to text uses. Download this [Here](https://alphacephei.com/vosk/models/vosk-model-en-us-0.42-gigaspeech.zip)
 
