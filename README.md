@@ -26,7 +26,7 @@ $ python main.py --video videoname.mp4
 
 ## Speech to text with audio
 
-Video must be `.wav`
+Audio must be `.wav`
 
 ```
 $ python main.py --audio audioname.wav
